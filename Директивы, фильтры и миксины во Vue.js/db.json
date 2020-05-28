@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "image": "1.jpg",
+      "name": "Подвески BASIC",
+      "price": 1500,
+      "article": "1",
+      "available": true
+    },
+    {
+      "image": "2.jpg",
+      "name": "Комплект колец BASIC",
+      "price": 2560,
+      "article": "2",
+      "available": true
+    },
+    {
+      "image": "3.jpg",
+      "name": "Комплект колец LUNA",
+      "price": 1799,
+      "article": "3",
+      "available": false
+    },
+    {
+      "image": "4.jpg",
+      "name": "Серьги SAHAROK",
+      "price": 4200,
+      "article": "4",
+      "available": true
+    },
+    {
+      "image": "5.jpg",
+      "name": "Серьги LUNA",
+      "price": 1380,
+      "article": "5",
+      "available": false
+    },
+    {
+      "image": "6.jpg",
+      "name": "Подвеска SIMPLE",
+      "price": 4000,
+      "article": "6",
+      "available": true
+    },
+    {
+      "image": "7.jpg",
+      "name": "Кольца YOU",
+      "price": 3000,
+      "article": "7",
+      "available": true
+    },
+    {
+      "image": "8.jpg",
+      "name": "Браслет BASIC",
+      "price": 1900,
+      "article": "8",
+      "available": true
+    },
+    {
+      "image": "9.jpg",
+      "name": "Подвеска SAHAROK",
+      "price": 2890,
+      "article": "9",
+      "available": true
+    }
+  ]
+}

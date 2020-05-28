@@ -1,0 +1,22 @@
+$padding: 8px;
+$margin: 8px;
+
+$green-bg: #26ae68;
+$green-bg-hover: #31c375;
+
+$radius: 4px;
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #d4a7a7;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #332727;
+  text-align: center;
+  transition: all 0.15s;
+}
