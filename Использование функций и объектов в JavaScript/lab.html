@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //  Задание 1. 
+
+        var answer = 1;
+        function power(num, pow) {
+            for (var i = 0; i < pow; i++) {
+                answer *= num;
+            }
+            return answer;
+        }
+        console.log('Задание 1: ' + power(16, 4));
+
+
+        //  Задание 2. 
+
+
+        function compare(x) {
+            return function (y) {
+                if (y > x) { return true; }
+                else if (y < x) { return false; }
+                else if (y = x) { return null; }
+            }
+        }
+        answer = compare(5);
+        console.log('Задание 2: ' + answer(5));
+
+
+        // Задание 3.
+
+
+        function ucfirst(stroka) {
+            var stroka2 = stroka.split(' ');
+            var stroka3 = stroka[0].toUpperCase() + stroka.slice(1);
+
+            var first = '';
+
+            for (var i = 0; i < stroka2.length; i++) {
+                var up = stroka2[i].substring(0, 1).toUpperCase() + stroka2[i].substring(1, stroka2[i].length);
+                first += up + ' ';
+            }
+
+            console.log(first);
+            console.log(stroka3);
+        }
+        console.log('Задание 3:');
+        ucfirst('валькирии вооружены копьями и увенчаны шлемами.');
+
+        // Задание 4.
+        console.log('Задание 4:');
+        var book1 = {};
+        book1.title = 'Мёртвые души ';
+        book1.pubYear = ' 2020 ';
+        book1.price = ' 500 тг. ';
+        book1.show = function () {
+            console.log(book1.title + ' -> ' + book1.price)
+        };
+
+
+
+        var book2 = {
+            title: 'Шерлок Холмс',
+            pubYear: '1974',
+            price: '100 тг.',
+            show: showBook
+        };
+
+        function showBook() {
+            console.log(this.title + ' -> ' + this.price)
+        };
+
+        book1.show();
+        book2.show();
+
+
+        for (var i in book1) {
+            console.log(i + ' - ' + book1[i]);
+        }
+
+        for (var i in book2) {
+            console.log(i + ' - ' + book2[i]);
+        }
+
+        //Задание 5.
+        console.log('Задание 5:');
+        var a = [5, 12];
+        var b = [];
+        a[99] = 7;
+        console.log('цикл for');
+       for (var i = 0; a.length > i; i++) {
+            if (!isNaN(a[i])) {
+                b.push(a[i] * a[i]);
+            }
+        }
+        console.log(b);
+
+        var b = [];
+        console.log('цикл for in ');
+        for (var i in a) {
+            b.push(a[i] * a[i]);
+            
+        }
+        console.log(b);
+
+        //Задание 6.
+        console.log('Задание 6:');
+        var s = 'Мы знаем, что монохромный цвет - это градации серого';
+        var txt = 'хром';
+        var word;
+        var segment = s.indexOf(txt);
+        var begin = s.lastIndexOf(' ', segment);
+        var end = s.indexOf(' ', segment);
+        word = s.slice(begin, end);
+        console.log(word);
+
+        //Задание 7.
+        console.log('Задание 7:');
+
+        function Book(title, pubYear, price) {
+            this.title = title;
+            this.pubYear = pubYear;
+            this.price = price;
+        };
+
+        var book3 = new Book('Сказание Земноморья', '2015', '150 тг.');
+
+        Book.prototype.show = function () {
+            console.log(this.title + ' -> ' + this.price);
+        };
+
+        book3.show();
+
+
+    </script>
+</body>
+
+</html>
