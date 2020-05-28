@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html id="myhtml">
+
+<head id="myhead">
+	<meta charset="utf-8">
+	<title id="mytitle">Открытие новых окон и запись содержания</title>
+	<style type="text/css" id="mystyle">
+		html {
+			background: #fff;
+			font: 16px calibri, sans-serif;
+			cursor: default;
+		}
+
+		p {
+			float: left;
+			margin: 0 8px 0 0;
+			padding: 20px;
+		}
+
+		.p1 {
+			background: #ccf;
+		}
+
+		.p2 {
+			background: #fcc;
+		}
+
+		.p3 {
+			background: #cfc;
+		}
+	</style>
+	<script type="text/javascript">
+		name = 'Это я его открыло!';
+		let win; /* НОВОЕ ОКНО! */
+
+		function winOpen() {
+			/*	
+				1. Откройте новое окно со следующими параметрами:
+						ширина: 300, высота: 200
+						окно должно быть открыто строго по середине экрана
+				2. Передайте фокус созданному окну
+			*/
+			//вычисление параметров экрана
+			var winW = screen.width;
+			var winH = screen.height;
+
+			//инициализация параметров нового окна
+			var myWidth = 300;
+			var myHeight = 250;
+
+			//вычисление координат центра экрана
+			var winleft = (winW - myWidth) / 2;
+			var wintop = (winH - myHeight) / 2;
+
+			let params = ('width=' + myWidth + ',height=' + myHeight + ',left=' + winleft + ',top=' + wintop);
+
+			win = window.open("", "", params);
+			win.focus();
+
+
+		};
+
+
+		function docWrite() {
+			/*
+				1. Запишите в документ дочернего окна содержание, 
+					состоящее из полного набора элементов, включая html, head, body, title
+				2. Включите в содержание элемент style с содержанием:
+						«html{background:#369;color:#fff;font:16px calibri, sans-serif;}»
+				3. Включите в содержание элемент p с содержанием «Текст параграфа»
+				4. Включите в содержание элемент script с содержанием «alert(opener.name)»
+			*/
+			win.focus();
+
+			//1
+			win.document.write(document.getElementById("myhtml").outerHTML);
+
+			//2
+			win.document.write("<style>html{background:#369;color:#fff;font:16px calibri, sans-serif;}</sty" + "le>");
+
+			//3
+			win.document.write("<p>«Текст параграфа»</p>");
+
+			//4
+			win.document.write("<script>alert(opener.name)</scr" + "ipt>");
+
+
+
+		}
+
+		function winClose() {
+			/*	
+				1. Проверьте, существует ли дочернее окно и не закрыто ли оно 
+				2. Если окно существует, то закройте его
+			*/
+			if (win.open) { win.close() }
+			else { alert("Закрывать нечего!") }
+
+		}
+	</script>
+</head>
+
+<body id="mybody">
+	<p class="p1"><a href="javascript:winOpen();">Открыть окно</a></p>
+	<p class="p3"><a href="javascript:docWrite();">Заполнить окно</a></p>
+	<p class="p2"><a href="javascript:winClose();">Закрыть окно</a></p>
+</body>
+
+</html>
