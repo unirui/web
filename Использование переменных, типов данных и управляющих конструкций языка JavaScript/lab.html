@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //задание 1.
+        var num = 2;
+        var pow = 10;
+        var i = 0;
+        var res = 1;
+
+        while (i < pow) {
+            res = res * num;
+            i++;
+        }
+        console.log('цикл while:  ' + res);
+
+        //задание 2.
+        var result = 1;
+        for (i = 0; i < pow; i++) {
+            result = result * num;
+        }
+        console.log('цикл for:  ' + result);
+
+        //задание 3.
+        var age = 17;
+
+        if (age >= 18 && age <= 59) {
+            console.log('Вам еще работать и работать.');
+        }
+        else if (age > 59) {
+            console.log('Вам пора на пенсию.');
+        }
+        else if (age >= 1 && age <= 17) {
+            console.log('Вам работать еще рано - учитесь.');
+        }
+
+        //задание 4.
+        var result = '';
+
+        for (var i = 0; i <= 9; i++) {
+            var transfer = '';
+            for (var t = 0; t <= 10 - i - 1; t++) {
+                transfer += ' ';
+            }
+            for (var j = 1; j <= i; j++) {
+                result += i;
+            }
+            console.log(transfer + result);
+            result = '';
+        }
+
+        //задание 5.
+        var num = 3;
+        switch (num) {
+            case 1:
+                result = 'зима';
+                break;
+            case 2:
+                result = 'весна';
+                break;
+            case 3:
+                result = 'лето';
+                break;
+            case 4:
+                result = 'осень';
+                break;
+        }
+        console.log(result);
+
+
+    </script>
+</body>
+
+</html>
